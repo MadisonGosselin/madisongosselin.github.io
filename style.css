@@ -1,0 +1,183 @@
+html{
+	scroll-behavior: smooth;
+	
+}
+
+body {
+	background-color: #171219;
+	color: #C5A48A;
+	text-align: center;
+	font-family: Times, Cochin, Georgia, Times, 'Times New Roman', serif;
+	overflow-x: hidden;
+}
+
+/* NAVIGATION */
+.openMenu{
+	font-size: 40px;
+	cursor: pointer;
+	position: fixed;
+	top: 10px;
+	left: 10px;
+}
+
+.overlay{
+	height: 100%;
+	width: 0;
+	position: fixed;
+	z-index: 1;
+	top: 0;
+	left: 0;
+	background-color: #171219;
+	background-color: #310D20;
+	overflow-x: hidden;
+	transition: 0.5s;
+}
+.overlay-content {
+	position: relative;
+	top: 25%;
+	width: 100%;
+	text-align: center;
+	margin-top: 30px;
+}
+  
+.overlay a {
+	padding: 8px;
+	text-decoration: none;
+	font-size: 36px;
+	color: #C5A48A;
+	display: block;
+	transition: 0.3s;
+}
+  
+.overlay a:hover, .overlay a:focus {
+	color: white;
+}
+  
+.overlay .closebtn {
+	position: absolute;
+	left: 10px;
+	font-size: 40px;
+}
+
+/* HOME PAGE */
+.pfp{
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 50%;
+    margin-top: 100px;
+	height: 325px;
+    width: 350px;
+}
+
+.name{
+	font-size: 38pt;
+	margin-top: 25px;
+}
+
+p{
+	font-size: 20px;
+	padding-top: 15px;
+	padding-left: 100px;
+	padding-right: 100px;
+}
+
+/* ABOUT ME */
+
+.promPic{
+	height: 280pt;
+	width: auto;
+	border-radius: 25%;
+	margin-top: 10pt;
+	margin-bottom: 20pt;
+}
+
+/* EXPERIENCE */
+
+.flipCard {
+	background-color: transparent;
+	width: 200px;
+	height: 200px;
+	perspective: 1000px;
+}
+  
+.flipCardInner {
+	position: relative;
+	width: 100%;
+	height: 100%;
+	text-align: center;
+	transition: transform 0.6s;
+	transform-style: preserve-3d;
+	box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+}
+  
+.flipCard:hover .flipCardInner {
+	transform: rotateY(180deg);
+}
+  
+.flipCardFront, .flipCardBack {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	-webkit-backface-visibility: hidden;
+	backface-visibility: hidden;
+}
+  
+.flipCardFront {
+	background-color: #171219;
+	color: #171219;
+}
+  
+.flipCardBack {
+	background-color: #171219;
+	transform: rotateY(180deg);
+}
+
+.parent {
+	margin: 10px;
+}
+.child {
+	display: inline-block;
+}
+
+/* SKILLS */
+
+.piechart {
+
+	width: 200pt;
+	height: 200pt;
+	display: block;
+	margin-left: auto;
+	margin-right: auto; 
+	margin-top: 10pt;
+    border-radius: 50%;
+    background-image: conic-gradient(
+
+		purple 2%, /* javascript - 2% */
+		blue 2% 6%, /* python - 4% */
+		green 6% 19%, /* java - 13% */
+		yellow 19% 35%, /* c++ - 16% */
+		orange 35% 60%, /* c - 25% */
+		red 60% /* html & css - 40% */
+	);
+} 
+
+.column {
+
+	display: block;
+	/* margin: 3%; */
+	margin-top: 2%;
+	margin-left: auto;
+	margin-right: auto; 
+	height: auto;
+    width: 150pt;
+	height: 150pt;
+}
+
+/* .row::after {
+	
+	float:left;
+	margin-top:10px;
+ 	width:728px;
+} */
+
+  
