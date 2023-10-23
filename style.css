@@ -1,6 +1,5 @@
 html{
 	scroll-behavior: smooth;
-	
 }
 
 body {
@@ -173,11 +172,19 @@ p{
 	height: 150pt;
 }
 
-/* .row::after {
-	
-	float:left;
-	margin-top:10px;
- 	width:728px;
-} */
+/* PROJECTS */
+
+.column1{
+	float: left;
+	width: 33.3%;
+	margin-bottom: 16px;
+	padding: 0 8px;
+	background-color: #310D20;
+}
+
+.card {
+	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+}  
+
 
   
