@@ -1,9 +1,9 @@
-//open&close menu
-function openNav(){
+
+
+document.querySelector(".openMenu").addEventListener("click", (e) => {
     document.getElementById("nav").style.width = "35%";
-}
+})
 
-function closeNav(){
+document.querySelector(".closebtn").addEventListener("click", (e) => {
     document.getElementById("nav").style.width = "0%"
-}
-
+})
