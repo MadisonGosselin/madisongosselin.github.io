@@ -2,10 +2,11 @@
 // create instances of needed html elements
 const body = document.querySelector("body")
 const modeSelector = document.querySelector(".modeSelector")
+const menu = document.querySelector(".openMenu")
 
-console.log(localStorage.getItem("storedMode"))
 let state = localStorage.getItem("storedMode") // create item in local storage to keep last mode
 
+// load last known mode
 const loadDisplay = () => {
     if(state == "light") {
         modeSelector.innerText = "🖤"
@@ -17,6 +18,7 @@ const loadDisplay = () => {
 }
 loadDisplay()
 
+// switch mode based on user button
 modeSelector.addEventListener("click", (e) => {
     if(state == "light") {
         localStorage.setItem("storedMode", "dark")
@@ -30,10 +32,11 @@ modeSelector.addEventListener("click", (e) => {
     state = localStorage.getItem("storedMode")
 })
 
-document.querySelector(".openMenu").addEventListener("click", (e) => {
-    document.getElementById("nav").style.width = "35%"
+// open menu when hovered over
+menu.addEventListener("mouseenter", () => {
+    console.log("in")
+    document.getElementById("nav").style.width = "20%"
 })
-
-document.querySelector(".closebtn").addEventListener("click", (e) => {
+document.querySelector(".overlay").addEventListener("mouseleave", () => {
     document.getElementById("nav").style.width = "0%"
 })

@@ -83,7 +83,7 @@ body {
 	text-decoration: underline;
 }
   
-.overlay .closebtn {
+.overlay {
 	position: absolute;
 	left: 10px;
 	font-size: 40px;
