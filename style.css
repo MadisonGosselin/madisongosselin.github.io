@@ -1,10 +1,21 @@
+/* light mode colour palette */
+:root {
+	--main-color: rgb(241, 241, 241);
+	--contrast-color: rgba(0, 0, 0, 0.863);
+}
+
+.darkMode {
+	--main-color: rgba(0, 0, 0, 0.863);
+	--contrast-color: rgb(241, 241, 241)
+}
+
 html{
 	scroll-behavior: smooth;
 }
 
 body {
-	background-color: #171219;
-	color: #C5A48A;
+	background-color: var(--main-color);
+	color: var(--contrast-color);
 	text-align: center;
 	font-family: Times, Cochin, Georgia, Times, 'Times New Roman', serif;
 	overflow-x: hidden;
@@ -17,6 +28,14 @@ body {
 	position: fixed;
 	top: 10px;
 	left: 10px;
+}
+
+.modeSelector {
+	font-size: 30px;
+	cursor: pointer;
+	position: fixed;
+	top: 15px;
+	right: 30px;
 }
 
 .overlay{
