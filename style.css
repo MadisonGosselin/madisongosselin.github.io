@@ -179,12 +179,19 @@ p{
 	width: 33.3%;
 	margin-bottom: 16px;
 	padding: 0 8px;
-	background-color: #310D20;
+	/* background-color: #310D20; */
 }
 
 .card {
 	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+	width: 600px;
+	height: 410px;
 }  
 
-
+.gitLogo {
+	height: 75px; 
+	width: 75px; 
+	background-color: rgb(255, 255, 255);
+	border-radius: 50px;
+}
   
