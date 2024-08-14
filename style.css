@@ -2,13 +2,13 @@
 :root {
 	--main-color: rgb(230, 230, 230);
 	--contrast-color: rgb(32, 32, 32);
-	--accent-color: rgb(168, 168, 168);
+	--accent-color: rgb(255, 101, 55);
 }
 
 .darkMode {
 	--main-color: rgb(32, 32, 32);
 	--contrast-color: rgb(230, 230, 230);
-	--accent-color: rgb(104, 104, 104);
+	/* --accent-color: rgb(255, 101, 55); */
 }
 
 html{
@@ -78,15 +78,9 @@ body {
 	transition: 0.3s;
 }
   
-.overlay a:hover, .overlay a:focus {
+.navEle:hover, .navEle:focus {
 	color: var(--main-color);
 	text-decoration: underline;
-}
-  
-.overlay {
-	position: absolute;
-	left: 10px;
-	font-size: 40px;
 }
 
 /* HOME PAGE */
@@ -125,7 +119,6 @@ p{
 /* EXPERIENCE */
 
 .flipCard {
-	background-color: transparent;
 	width: 200px;
 	height: 200px;
 	perspective: 1000px;
@@ -155,11 +148,11 @@ p{
   
 .flipCardFront {
 	background-color: var(--main-color);
-	color: var(--accent-color);
 }
   
 .flipCardBack {
-	background-color: var(--accent-color);
+	background-color: var(--main-color);
+	color: var(--contrast-color);
 	transform: rotateY(180deg);
 }
 

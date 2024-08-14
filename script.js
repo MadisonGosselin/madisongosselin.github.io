@@ -3,6 +3,8 @@
 const body = document.querySelector("body")
 const modeSelector = document.querySelector(".modeSelector")
 const menu = document.querySelector(".openMenu")
+const overlay = document.querySelector(".overlay")
+const navElement = document.querySelector(".navEle")
 
 let state = localStorage.getItem("storedMode") // create item in local storage to keep last mode
 
@@ -34,9 +36,8 @@ modeSelector.addEventListener("click", (e) => {
 
 // open menu when hovered over
 menu.addEventListener("mouseenter", () => {
-    console.log("in")
-    document.getElementById("nav").style.width = "20%"
+    overlay.style.width = "20%"
 })
-document.querySelector(".overlay").addEventListener("mouseleave", () => {
-    document.getElementById("nav").style.width = "0%"
+overlay.addEventListener("mouseleave", () => {
+    overlay.style.width = "0%"
 })
