@@ -1,29 +1,35 @@
 /* light mode colour palette */
 :root {
-	--main-color: rgb(230, 230, 230);
+	--main-color: rgb(247, 247, 247);
 	--contrast-color: rgb(32, 32, 32);
 	--accent-color: rgb(255, 101, 55);
+
+	scroll-behavior: smooth;
 }
 
+/* dark mode colour palette */
 .darkMode {
 	--main-color: rgb(32, 32, 32);
 	--contrast-color: rgb(230, 230, 230);
 	/* --accent-color: rgb(255, 101, 55); */
 }
 
-html{
-	scroll-behavior: smooth;
-}
-
+/* ALL PAGES */
 body {
 	background-color: var(--main-color);
 	color: var(--contrast-color);
 	text-align: center;
 	font-family: Times, Cochin, Georgia, Times, 'Times New Roman', serif;
-	overflow-x: hidden;
 }
 
-/* NAVIGATION */
+.textBlurts {
+	font-size: 20px;
+	padding-top: 15px;
+	padding-left: 100px;
+	padding-right: 100px;
+}
+
+/* ICONS */
 .openMenu{
 	font-size: 35px;
 	cursor: pointer;
@@ -50,6 +56,7 @@ body {
 	user-select: none;
 }
 
+/* NAVIGATION */
 .overlay{
 	height: 100%;
 	width: 0;
@@ -61,16 +68,11 @@ body {
 	overflow-x: hidden;
 	transition: 0.5s;
 }
-.overlay-content {
-	position: absolute;
-	top: 25%;
-	width: 100%;
-	text-align: center;
-	margin-top: 30px;
-}
   
-.overlay a {
+.navEle {
 	padding: 8px;
+	padding-left: 75px;
+	text-align: left;
 	text-decoration: none;
 	font-size: 36px;
 	color: var(--constrast-color); 
@@ -80,7 +82,7 @@ body {
   
 .navEle:hover, .navEle:focus {
 	color: var(--main-color);
-	text-decoration: underline;
+	text-decoration: none;
 }
 
 /* HOME PAGE */
@@ -90,7 +92,7 @@ body {
     border-radius: 50%;
     margin-top: 100px;
 	height: 325px;
-    width: 350px;
+    width: auto;
 }
 
 .name{
@@ -98,15 +100,7 @@ body {
 	margin-top: 25px;
 }
 
-p{
-	font-size: 20px;
-	padding-top: 15px;
-	padding-left: 100px;
-	padding-right: 100px;
-}
-
 /* ABOUT ME */
-
 .promPic{
 	height: 280pt;
 	width: auto;
@@ -117,11 +111,12 @@ p{
 }
 
 /* EXPERIENCE */
-
 .flipCard {
 	width: 200px;
 	height: 200px;
 	perspective: 1000px;
+	display: inline-block;
+	margin: 10px;
 }
   
 .flipCardInner {
@@ -156,15 +151,7 @@ p{
 	transform: rotateY(180deg);
 }
 
-.parent {
-	margin: 10px;
-}
-.child {
-	display: inline-block;
-}
-
 /* SKILLS */
-
 .piechart {
 
 	width: 200pt;
@@ -198,7 +185,6 @@ p{
 }
 
 /* PROJECTS */
-
 .column1{
 	float: left;
 	width: 33.3%;
