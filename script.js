@@ -75,6 +75,10 @@ languages.forEach((language) => {
                 langInfo.innerText = "C++"
                 break;
 
+            case language.classList.contains("csharp"):
+                langInfo.innerText = "C#"
+                break;
+
             case language.classList.contains("sql"):
                 langInfo.innerText = "SQL"
                 break;
