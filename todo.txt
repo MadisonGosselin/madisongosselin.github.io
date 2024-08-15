@@ -1,0 +1,2 @@
+- If u open the nav while scrolled down, it isnt relative
+- Volunteer experience
