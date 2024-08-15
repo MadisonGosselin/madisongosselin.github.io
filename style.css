@@ -85,7 +85,7 @@ body {
   
 .navEle:hover, .navEle:focus {
 	color: var(--main-color);
-	text-decoration: underline;
+	font-weight: bold;
 }
 
 /* HOME PAGE */
