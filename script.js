@@ -6,6 +6,7 @@ const menu = document.querySelector(".openMenu")
 const overlay = document.querySelector(".overlay")
 
 const languages = document.querySelectorAll(".lang")
+const langInfo = document.querySelector(".langInfo")
 
 // create item in local storage to keep last mode
 let state = localStorage.getItem("storedMode") 
@@ -44,45 +45,50 @@ overlay.addEventListener("mouseleave", () => {
     overlay.style.width = "0%"
 })
 
-// test area
-
-const temp = document.querySelector(".projectInfo")
-
+// display projects for chosen language
 languages.forEach((language) => {
     language.addEventListener("mouseenter", () => {
-        console.log("hi")
+
         switch(true){
 
             case language.classList.contains("java"):
-                temp.innerText = "Java"
+                langInfo.innerText = "Java"
                 break;
 
             case language.classList.contains("html"):
-                temp.innerText = "HTML"
+                langInfo.innerText = "HTML"
                 break;
 
             case language.classList.contains("css"):
-                temp.innerText = "CSS"
+                langInfo.innerText = "CSS"
                 break;
 
             case language.classList.contains("js"):
-                temp.innerText = "JavaScript"
+                langInfo.innerText = "JavaScript"
                 break;
 
             case language.classList.contains("c"):
-                temp.innerText = "C"
+                langInfo.innerText = "C"
                 break;
 
             case language.classList.contains("cpp"):
-                temp.innerText = "C++"
+                langInfo.innerText = "C++"
                 break;
 
             case language.classList.contains("sql"):
-                temp.innerText = "SQL"
+                langInfo.innerText = "SQL"
+                break;
+            
+            case language.classList.contains("asm"):
+                langInfo.innerText = "Assembly"
+                break;
+            
+            case language.classList.contains("py"):
+                langInfo.innerText = "Python"
                 break;
 
             default:
-                temp.innerText = "Error: Couldn't find language"
+                langInfo.innerText = "Error: Couldn't find language"
         }
     })
 })

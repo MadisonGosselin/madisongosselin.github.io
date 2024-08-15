@@ -219,4 +219,11 @@ body {
 .lang {
 	display: inline-block;
 	margin: 15px;
+	font-size: 25px;
+	/* border: 4px solid white; */
+}
+
+.langImg {
+	width: 70px;
+	height: auto;
 }
