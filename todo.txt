@@ -1,1 +1,2 @@
 - Volunteer experience
+- Add linkedin, github and mail icons on home page
