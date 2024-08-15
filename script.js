@@ -4,9 +4,11 @@ const body = document.querySelector("body")
 const modeSelector = document.querySelector(".modeSelector")
 const menu = document.querySelector(".openMenu")
 const overlay = document.querySelector(".overlay")
-const navElement = document.querySelector(".navEle")
 
-let state = localStorage.getItem("storedMode") // create item in local storage to keep last mode
+const languages = document.querySelectorAll(".lang")
+
+// create item in local storage to keep last mode
+let state = localStorage.getItem("storedMode") 
 
 // load last known mode
 const loadDisplay = () => {
@@ -40,4 +42,47 @@ menu.addEventListener("mouseenter", () => {
 })
 overlay.addEventListener("mouseleave", () => {
     overlay.style.width = "0%"
+})
+
+// test area
+
+const temp = document.querySelector(".projectInfo")
+
+languages.forEach((language) => {
+    language.addEventListener("mouseenter", () => {
+        console.log("hi")
+        switch(true){
+
+            case language.classList.contains("java"):
+                temp.innerText = "Java"
+                break;
+
+            case language.classList.contains("html"):
+                temp.innerText = "HTML"
+                break;
+
+            case language.classList.contains("css"):
+                temp.innerText = "CSS"
+                break;
+
+            case language.classList.contains("js"):
+                temp.innerText = "JavaScript"
+                break;
+
+            case language.classList.contains("c"):
+                temp.innerText = "C"
+                break;
+
+            case language.classList.contains("cpp"):
+                temp.innerText = "C++"
+                break;
+
+            case language.classList.contains("sql"):
+                temp.innerText = "SQL"
+                break;
+
+            default:
+                temp.innerText = "Error: Couldn't find language"
+        }
+    })
 })

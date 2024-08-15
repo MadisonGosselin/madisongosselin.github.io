@@ -216,3 +216,7 @@ body {
 	border-radius: 50px;
 }
   
+.lang {
+	display: inline-block;
+	margin: 15px;
+}
