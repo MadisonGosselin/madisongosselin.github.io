@@ -60,15 +60,16 @@ body {
 
 /* NAVIGATION */
 .overlay{
-	height: 100%;
+	height: 40%;
 	width: 0;
-	position: absolute;
+	position: fixed;
 	z-index: 1;
 	top: 0;
 	left: 0;
+	overflow: hidden;
 	background-color: var(--accent-color);
-	overflow-x: hidden;
 	transition: 0.5s;
+	border-radius: 0px 100px 100px 0px;
 }
   
 .navEle {
