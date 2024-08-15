@@ -1,2 +1,7 @@
 - Volunteer experience
 - Add linkedin, github and mail icons on home page
+
+
+idea:
+    each language has an icon at the top, if the icon was hovered over it reveals the projects
+    i have done for that specific language
