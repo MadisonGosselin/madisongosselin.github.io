@@ -36,7 +36,7 @@ modeSelector.addEventListener("click", (e) => {
 
 // open menu when hovered over
 menu.addEventListener("mouseenter", () => {
-    overlay.style.width = "16%"
+    overlay.style.width = "20%"
 })
 overlay.addEventListener("mouseleave", () => {
     overlay.style.width = "0%"
