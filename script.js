@@ -5,6 +5,8 @@ const menu = document.querySelector(".openMenu");
 const overlay = document.querySelector(".overlay");
 const languages = document.querySelectorAll(".lang");
 const langInfo = document.querySelector(".langInfo");
+const leftArrow = document.querySelector(".left");
+const rightArrow = document.querySelector(".right");
 
 /********************
  *
@@ -68,7 +70,7 @@ const listOfLangs = [
     "asm",
     "py",
 ];
-let counter = -1;
+let counter = 0;
 
 // function that uses formattting to highlight the inputted language
 function pickLang(lang) {
@@ -77,22 +79,18 @@ function pickLang(lang) {
             other.style.transform = "scale(1.0)";
         else other.style.transform = "scale(1.7)";
     });
-
-    localStorage.setItem("storedLang", lang);
 }
+pickLang("java");
 
-// on reload, it sets it to the last known highlighted language
-pickLang(localStorage.getItem("storedLang"));
+// allow arrows to scroll through languages
+leftArrow.addEventListener("click", () => {
+    counter = (counter - 1 + languages.length) % languages.length;
+    pickLang(listOfLangs[counter]);
+});
 
-// allow keys to scroll through languages
-document.addEventListener("keydown", (event) => {
-    if (event.key === "ArrowRight") {
-        counter = (counter + 1) % languages.length;
-        pickLang(listOfLangs[counter]);
-    } else if (event.key === "ArrowLeft") {
-        counter = (counter - 1 + languages.length) % languages.length;
-        pickLang(listOfLangs[counter]);
-    }
+rightArrow.addEventListener("click", () => {
+    counter = (counter + 1) % languages.length;
+    pickLang(listOfLangs[counter]);
 });
 
 // display projects for chosen language
