@@ -6,3 +6,5 @@ what i was doing:
 
     added a bunch of divs into the html to add the project langInfo
     need to find a way in js to make wanted one visible and rest invisible without clunky code
+
+BUG: the localStorage saves name not counter so it breaks the arrows

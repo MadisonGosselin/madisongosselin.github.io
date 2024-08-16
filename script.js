@@ -1,6 +1,6 @@
 /********************
  *
- * Dark mode/menu
+ * Universal for all pages
  *
  ********************/
 
