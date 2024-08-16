@@ -2,6 +2,7 @@
 - Add linkedin, github and mail icons on home page
 
 
-idea:
-    each language has an icon at the top, if the icon was hovered over it reveals the projects
-    i have done for that specific language
+what i was doing: 
+
+    added a bunch of divs into the html to add the project langInfo
+    need to find a way in js to make wanted one visible and rest invisible without clunky code

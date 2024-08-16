@@ -237,3 +237,7 @@ body {
 .arrow:hover {
 	color: var(--accent-color);
 }
+
+.inner {
+	position: absolute;
+}

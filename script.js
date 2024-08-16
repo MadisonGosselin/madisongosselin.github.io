@@ -4,7 +4,6 @@ const modeSelector = document.querySelector(".modeSelector");
 const menu = document.querySelector(".openMenu");
 const overlay = document.querySelector(".overlay");
 const languages = document.querySelectorAll(".lang");
-const langInfo = document.querySelector(".langInfo");
 const leftArrow = document.querySelector(".left");
 const rightArrow = document.querySelector(".right");
 
@@ -79,8 +78,11 @@ function pickLang(lang) {
             other.style.transform = "scale(1.0)";
         else other.style.transform = "scale(1.7)";
     });
+
+    localStorage.setItem("storedLang", lang);
 }
-pickLang("java");
+// on reload have it go to last selected language
+pickLang(localStorage.getItem("storedLang"));
 
 // allow arrows to scroll through languages
 leftArrow.addEventListener("click", () => {
@@ -93,72 +95,75 @@ rightArrow.addEventListener("click", () => {
     pickLang(listOfLangs[counter]);
 });
 
+languages.forEach((language) => {});
+
 // display projects for chosen language
 languages.forEach((language) => {
     language.addEventListener("mouseenter", () => {
         switch (true) {
             case language.classList.contains("java"):
-                langInfo.innerText = "Java";
+                document.querySelector(".javaInfo").style.visibility =
+                    "visible";
                 pickLang("java");
                 counter = 0;
                 break;
 
             case language.classList.contains("html"):
-                langInfo.innerText = "HTML";
+                // langInfo.innerText = "HTML";
                 pickLang("html");
                 counter = 1;
                 break;
 
             case language.classList.contains("css"):
-                langInfo.innerText = "CSS";
+                // langInfo.innerText = "CSS";
                 pickLang("css");
                 counter = 2;
                 break;
 
             case language.classList.contains("js"):
-                langInfo.innerText = "JavaScript";
+                // langInfo.innerText = "JavaScript";
                 pickLang("js");
                 counter = 3;
                 break;
 
             case language.classList.contains("c"):
-                langInfo.innerText = "C";
+                // langInfo.innerText = "C";
                 pickLang("c");
                 counter = 4;
                 break;
 
             case language.classList.contains("cpp"):
-                langInfo.innerText = "C++";
+                // langInfo.innerText = "C++";
                 pickLang("cpp");
                 counter = 5;
                 break;
 
             case language.classList.contains("csharp"):
-                langInfo.innerText = "C#";
+                // langInfo.innerText = "C#";
                 pickLang("csharp");
                 counter = 6;
                 break;
 
             case language.classList.contains("sql"):
-                langInfo.innerText = "SQL";
+                // langInfo.innerText = "SQL";
                 pickLang("sql");
                 counter = 7;
                 break;
 
             case language.classList.contains("asm"):
-                langInfo.innerText = "Assembly";
+                // langInfo.innerText = "Assembly";
                 pickLang("asm");
                 counter = 8;
                 break;
 
             case language.classList.contains("py"):
-                langInfo.innerText = "Python";
+                // langInfo.innerText = "Python";
                 pickLang("py");
                 counter = 9;
                 break;
 
             default:
-                langInfo.innerText = "Error: Couldn't find language";
+            // langInfo.innerText = "Error: Couldn't find language";
         }
     });
 });
