@@ -53,6 +53,7 @@ languages.forEach((language) => {
 
             case language.classList.contains("java"):
                 langInfo.innerText = "Java"
+                temp = "Java"
                 break;
 
             case language.classList.contains("html"):
@@ -94,5 +95,14 @@ languages.forEach((language) => {
             default:
                 langInfo.innerText = "Error: Couldn't find language"
         }
+
+        languages.forEach(other => {
+            if(other !== language){
+                other.style.transform = "scale(0.7)"
+                document.querySelector("langImg")
+            }
+        })
+        language.style.transform = "scale(1.8)"
+
     })
 })
