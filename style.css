@@ -74,6 +74,7 @@ body {
 	background-color: var(--accent-color);
 	transition: 0.5s;
 	border-radius: 0px 100px 100px 0px;
+	border-bottom: 3px solid var(--contrast-color);
 }
   
 .navEle {
@@ -215,3 +216,14 @@ body {
 	border-radius: 50px;
 }
   
+.lang {
+	display: inline-block;
+	margin: 15px;
+	font-size: 25px;
+	/* border: 4px solid white; */
+}
+
+.langImg {
+	width: auto;
+	height: 90px;
+}

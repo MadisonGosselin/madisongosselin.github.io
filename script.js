@@ -4,9 +4,12 @@ const body = document.querySelector("body")
 const modeSelector = document.querySelector(".modeSelector")
 const menu = document.querySelector(".openMenu")
 const overlay = document.querySelector(".overlay")
-const navElement = document.querySelector(".navEle")
 
-let state = localStorage.getItem("storedMode") // create item in local storage to keep last mode
+const languages = document.querySelectorAll(".lang")
+const langInfo = document.querySelector(".langInfo")
+
+// create item in local storage to keep last mode
+let state = localStorage.getItem("storedMode") 
 
 // load last known mode
 const loadDisplay = () => {
@@ -36,8 +39,70 @@ modeSelector.addEventListener("click", (e) => {
 
 // open menu when hovered over
 menu.addEventListener("mouseenter", () => {
-    overlay.style.width = "20%"
+    overlay.style.width = "350px"
 })
 overlay.addEventListener("mouseleave", () => {
     overlay.style.width = "0%"
+})
+
+// display projects for chosen language
+languages.forEach((language) => {
+    language.addEventListener("mouseenter", () => {
+
+        switch(true){
+
+            case language.classList.contains("java"):
+                langInfo.innerText = "Java"
+                temp = "Java"
+                break;
+
+            case language.classList.contains("html"):
+                langInfo.innerText = "HTML"
+                break;
+
+            case language.classList.contains("css"):
+                langInfo.innerText = "CSS"
+                break;
+
+            case language.classList.contains("js"):
+                langInfo.innerText = "JavaScript"
+                break;
+
+            case language.classList.contains("c"):
+                langInfo.innerText = "C"
+                break;
+
+            case language.classList.contains("cpp"):
+                langInfo.innerText = "C++"
+                break;
+
+            case language.classList.contains("csharp"):
+                langInfo.innerText = "C#"
+                break;
+
+            case language.classList.contains("sql"):
+                langInfo.innerText = "SQL"
+                break;
+            
+            case language.classList.contains("asm"):
+                langInfo.innerText = "Assembly"
+                break;
+            
+            case language.classList.contains("py"):
+                langInfo.innerText = "Python"
+                break;
+
+            default:
+                langInfo.innerText = "Error: Couldn't find language"
+        }
+
+        languages.forEach(other => {
+            if(other !== language){
+                other.style.transform = "scale(0.7)"
+                document.querySelector("langImg")
+            }
+        })
+        language.style.transform = "scale(1.8)"
+
+    })
 })
