@@ -7,8 +7,9 @@
 const languages = document.querySelectorAll(".lang");
 const leftArrow = document.querySelector(".left");
 const rightArrow = document.querySelector(".right");
+const langInfo = document.querySelectorAll(".langInfo");
 
-// create a list of all languages, a counter for indexing
+// create a list of all languages
 const listOfLangs = [
     "java",
     "html",
@@ -21,101 +22,56 @@ const listOfLangs = [
     "asm",
     "py",
 ];
-let counter = 0;
+// create a variable to track the index, update with saved value
+let currLangIndex = localStorage.getItem("storedLang");
+highlightSelectedLang(currLangIndex);
 
-// function that uses formattting to highlight the inputted language
-function pickLang(lang) {
-    languages.forEach((other) => {
-        if (!other.classList.contains(lang))
-            other.style.transform = "scale(1.0)";
-        else other.style.transform = "scale(1.7)";
-    });
-
-    localStorage.setItem("storedLang", lang);
+// returns the index of the inputted language
+function getLangSelected(lang) {
+    return listOfLangs.findIndex((langName) =>
+        lang.classList.contains(langName)
+    );
 }
-// on reload have it go to last selected language
-pickLang(localStorage.getItem("storedLang"));
 
-// allow arrows to scroll through languages
-leftArrow.addEventListener("click", () => {
-    counter = (counter - 1 + languages.length) % languages.length;
-    pickLang(listOfLangs[counter]);
-});
+// display the info of the selected language and make it bigger to emphasize
+function highlightSelectedLang(langIndex) {
+    const nameOfLang = listOfLangs[langIndex];
 
-rightArrow.addEventListener("click", () => {
-    counter = (counter + 1) % languages.length;
-    pickLang(listOfLangs[counter]);
-});
+    // display only the info for the selected language
+    langInfo.forEach((selectedLangInfo) => {
+        if (!selectedLangInfo.classList.contains(nameOfLang))
+            selectedLangInfo.style.display = "none";
+        else selectedLangInfo.style.display = "inline-block";
+    });
 
-languages.forEach((language) => {});
+    // scale up selected language, scale down the rest
+    languages.forEach((other) => {
+        if (!other.classList.contains(nameOfLang))
+            other.style.transform = "scale(1.0)";
+        else other.style.transform = "scale(1.4)";
+    });
 
-// display projects for chosen language
-languages.forEach((language) => {
-    language.addEventListener("mouseenter", () => {
-        switch (true) {
-            case language.classList.contains("java"):
-                document.querySelector(".javaInfo").style.visibility =
-                    "visible";
-                pickLang("java");
-                counter = 0;
-                break;
+    localStorage.setItem("storedLang", langIndex);
+}
 
-            case language.classList.contains("html"):
-                // langInfo.innerText = "HTML";
-                pickLang("html");
-                counter = 1;
-                break;
-
-            case language.classList.contains("css"):
-                // langInfo.innerText = "CSS";
-                pickLang("css");
-                counter = 2;
-                break;
-
-            case language.classList.contains("js"):
-                // langInfo.innerText = "JavaScript";
-                pickLang("js");
-                counter = 3;
-                break;
-
-            case language.classList.contains("c"):
-                // langInfo.innerText = "C";
-                pickLang("c");
-                counter = 4;
-                break;
-
-            case language.classList.contains("cpp"):
-                // langInfo.innerText = "C++";
-                pickLang("cpp");
-                counter = 5;
-                break;
-
-            case language.classList.contains("csharp"):
-                // langInfo.innerText = "C#";
-                pickLang("csharp");
-                counter = 6;
-                break;
-
-            case language.classList.contains("sql"):
-                // langInfo.innerText = "SQL";
-                pickLang("sql");
-                counter = 7;
-                break;
-
-            case language.classList.contains("asm"):
-                // langInfo.innerText = "Assembly";
-                pickLang("asm");
-                counter = 8;
-                break;
-
-            case language.classList.contains("py"):
-                // langInfo.innerText = "Python";
-                pickLang("py");
-                counter = 9;
-                break;
-
-            default:
-            // langInfo.innerText = "Error: Couldn't find language";
-        }
+// update current index and highlight the chosen language
+languages.forEach((lang) => {
+    lang.addEventListener("mouseenter", () => {
+        currLangIndex = getLangSelected(lang);
+        highlightSelectedLang(currLangIndex);
     });
 });
+
+// move left from the chosen index when clicked
+leftArrow.addEventListener("click", () => {
+    currLangIndex =
+        (currLangIndex - 1 + listOfLangs.length) % listOfLangs.length;
+    highlightSelectedLang(currLangIndex);
+});
+
+// move right from the chosen index when clicked
+rightArrow.addEventListener("click", () => {
+    currLangIndex = (currLangIndex + 1) % listOfLangs.length;
+    highlightSelectedLang(currLangIndex);
+});
+
