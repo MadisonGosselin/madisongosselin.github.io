@@ -36,6 +36,10 @@ modeSelector.addEventListener("click", (e) => {
         modeSelector.innerText = "🖤";
     }
     state = localStorage.getItem("storedMode");
+
+    // send an event so projectsScript can update accordingly
+    const modeChangeEvent = new Event("modeChange");
+    document.dispatchEvent(modeChangeEvent);
 });
 
 // open menu when hovered over
@@ -45,3 +49,4 @@ menu.addEventListener("mouseenter", () => {
 overlay.addEventListener("mouseleave", () => {
     overlay.style.width = "0%";
 });
+

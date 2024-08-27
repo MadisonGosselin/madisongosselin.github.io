@@ -23,7 +23,10 @@ const listOfLangs = [
     "py",
 ];
 // create a variable to track the index, update with saved value
-let currLangIndex = localStorage.getItem("storedLang");
+let currLangIndex = parseInt(localStorage.getItem("storedLang"), 10);
+if (isNaN(currLangIndex)) {
+    currLangIndex = 0; // Default to the first language if no valid value is found
+}
 highlightSelectedLang(currLangIndex);
 
 // returns the index of the inputted language
@@ -46,13 +49,28 @@ function highlightSelectedLang(langIndex) {
 
     // scale up selected language, scale down the rest
     languages.forEach((other) => {
-        if (!other.classList.contains(nameOfLang))
+        if (!other.classList.contains(nameOfLang)) {
             other.style.transform = "scale(1.0)";
-        else other.style.transform = "scale(1.4)";
+            other.style.backgroundColor = "transparent";
+            other.style.boxShadow = "none";
+            other.style.borderRadius = "0px";
+        } else {
+            other.style.transform = "scale(1.4)";
+            other.style.backgroundColor = getComputedStyle(
+                document.body
+            ).getPropertyValue("--underlayClr");
+            other.style.boxShadow = "0 4px 8px 0 var(--accentClr)";
+            other.style.borderRadius = "10px";
+        }
     });
 
     localStorage.setItem("storedLang", langIndex);
 }
+
+// rehighlight to correct color when mode is changed
+document.addEventListener("modeChange", () => {
+    highlightSelectedLang(currLangIndex);
+});
 
 // update current index and highlight the chosen language
 languages.forEach((lang) => {
