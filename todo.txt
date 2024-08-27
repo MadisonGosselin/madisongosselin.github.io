@@ -2,4 +2,3 @@
 - Add linkedin, github and mail icons on home page
 
 - Maybe add FRC to Java tab
-- Maybe add grades to the revelant course work area

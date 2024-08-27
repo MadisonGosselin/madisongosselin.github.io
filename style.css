@@ -66,7 +66,7 @@ body {
 
 /* NAVIGATION */
 .overlay {
-    height: 40%;
+    height: 32%;
     width: 0;
     position: fixed;
     z-index: 1;
@@ -162,36 +162,6 @@ body {
     background-color: var(--underlayClr);
     color: var(--textClr);
     transform: rotateY(180deg);
-}
-
-/* SKILLS */
-.piechart {
-    width: 200pt;
-    height: 200pt;
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    margin-top: 10pt;
-    border-radius: 50%;
-    background-image: conic-gradient(
-        purple 2%,
-        /* javascript - 2% */ blue 2% 6%,
-        /* python - 4% */ green 6% 19%,
-        /* java - 13% */ yellow 19% 35%,
-        /* c++ - 16% */ orange 35% 60%,
-        /* c - 25% */ red 60% /* html & css - 40% */
-    );
-}
-
-.column {
-    display: block;
-    /* margin: 3%; */
-    margin-top: 2%;
-    margin-left: auto;
-    margin-right: auto;
-    height: auto;
-    width: 150pt;
-    height: 150pt;
 }
 
 /* PROJECTS */
