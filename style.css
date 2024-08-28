@@ -139,18 +139,30 @@ body {
 }
 
 .name {
-    font-size: 38pt;
+    font-size: 38px;
     margin-top: 25px;
 }
 
 /* ABOUT ME */
 .promPic {
-    height: 280pt;
-    width: auto;
+    height: 480px;
+    /* width: auto; */
     border-radius: 25%;
-    margin-top: 10pt;
-    margin-bottom: 20pt;
-    box-shadow: 0 4px 8px 0 var(--textClr);
+    margin-top: 10px;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 15px 0 var(--textClr);
+}
+
+.aboutMeTextBlurts {
+    display: flex;
+}
+
+.aboutMeText {
+    background-color: var(--underlayClr);
+    box-shadow: 0 4px 15px 0 var(--textClr);
+    margin: 30px 70px 0px 70px;
+    padding: 15px;
+    border-radius: 50px;
 }
 
 /* EXPERIENCE */
