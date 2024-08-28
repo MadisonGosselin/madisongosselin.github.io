@@ -10,8 +10,8 @@ const slideRight = document.querySelector(".slideRight");
 
 // init slide variable with last visited slide (if valid) then call method to jump to that slide
 let currSlide = parseInt(localStorage.getItem("lastSlide"), 10);
-if (isNaN(currLangIndex)) {
-    currLangIndex = slides.length; 
+if (isNaN(currSlide)) {
+    currSlide = slides.length; 
 }
 changeSlide(currSlide);
 
