@@ -187,6 +187,7 @@ body {
     transition: transform 0.6s;
     transform-style: preserve-3d;
     box-shadow: 0 4px 8px 0 var(--textClr);
+    border-radius: 15px;
 }
 
 .flipCard:hover .flipCardInner {
@@ -204,12 +205,14 @@ body {
 
 .flipCardFront {
     background-color: var(--backgroundClr);
+    border-radius: 15px;
 }
 
 .flipCardBack {
     background-color: var(--underlayClr);
     color: var(--textClr);
     transform: rotateY(180deg);
+    border-radius: 15px;
 }
 
 /* PROJECTS */
