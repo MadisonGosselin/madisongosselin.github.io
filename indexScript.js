@@ -9,7 +9,10 @@ const slideLeft = document.querySelector(".slideLeft");
 const slideRight = document.querySelector(".slideRight");
 
 // init slide variable with last visited slide then call method to jump to that slide
-let currSlide = localStorage.getItem("lastSlide");
+let currSlide
+
+if(localStorage.getItem("lastSlide") !== null) currSlide = localStorage.getItem("lastSlide");
+else currSlide = slides.length;
 changeSlide(currSlide);
 
 // change to slide with class corresponding to passed in value
