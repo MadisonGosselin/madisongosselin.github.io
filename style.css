@@ -98,13 +98,52 @@ body {
 }
 
 /* HOME PAGE */
-.pfp {
+/* .pfp {
     margin-left: auto;
     margin-right: auto;
     border-radius: 50%;
     margin-top: 100px;
     height: 325px;
     width: auto;
+} */
+.slideshow {
+    position: relative;
+    width: 750px;
+    height: 500px;
+    margin: 50px auto 50px auto;
+}
+
+.slide {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: 10px double var(--textClr);
+    border-radius: 35%;
+}
+
+.slideNav {
+    position: absolute;
+    z-index: 2;
+    top: 40%;
+    background-color: var(--backgroundClr);
+    font-size: 35px;
+    padding: 0px 5px 0px 5px;
+    border: 2px double var(--textClr);
+    border-radius: 30%;
+}
+
+.slideNav:hover {
+    color: var(--accentClr);
+}
+
+.slideLeft {
+    left: 0;
+}
+
+.slideRight {
+    right: 0;
 }
 
 .name {

@@ -49,4 +49,3 @@ menu.addEventListener("mouseenter", () => {
 overlay.addEventListener("mouseleave", () => {
     overlay.style.width = "0%";
 });
-

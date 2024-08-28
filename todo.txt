@@ -1,4 +1,3 @@
 - Volunteer experience
 - Add linkedin, github and mail icons on home page
 
-- Maybe add FRC to Java tab
