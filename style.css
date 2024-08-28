@@ -86,7 +86,7 @@ body {
     text-decoration: none;
     font-size: 34px;
     font-family: arial black, sans-serif;
-    color: var(--constrast-color);
+    color: var(--textClr);
     display: block;
     transition: 0.3s;
 }
@@ -141,6 +141,11 @@ body {
 .name {
     font-size: 38px;
     margin-top: 25px;
+}
+
+.logo {
+    width: 75px;
+    margin: 10px;
 }
 
 /* ABOUT ME */
@@ -242,7 +247,6 @@ body {
     width: auto;
     padding: 15px;
     background-color: var(--underlayClr);
-    border: 2px solid var(--constrast-color);
     border-radius: 10px;
 }
 
