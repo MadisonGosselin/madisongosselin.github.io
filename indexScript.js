@@ -8,11 +8,11 @@ const slides = document.querySelectorAll(".slide");
 const slideLeft = document.querySelector(".slideLeft");
 const slideRight = document.querySelector(".slideRight");
 
-// init slide variable with last visited slide then call method to jump to that slide
-let currSlide
-
-if(localStorage.getItem("lastSlide") !== null) currSlide = localStorage.getItem("lastSlide");
-else currSlide = slides.length;
+// init slide variable with last visited slide (if valid) then call method to jump to that slide
+let currSlide = parseInt(localStorage.getItem("lastSlide"), 10);
+if (isNaN(currLangIndex)) {
+    currLangIndex = slides.length; 
+}
 changeSlide(currSlide);
 
 // change to slide with class corresponding to passed in value
