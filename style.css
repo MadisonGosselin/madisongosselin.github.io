@@ -3,7 +3,7 @@
     --backgroundClr: rgb(247, 247, 247);
     --textClr: rgb(32, 32, 32);
     --accentClr: rgb(255, 101, 55);
-    --underlayClr: rgba(219, 219, 219, 0.781);
+    --underlayClr: rgba(219, 219, 219, 0.897);
 
     scroll-behavior: smooth;
 }
@@ -12,7 +12,7 @@
 .darkMode {
     --backgroundClr: rgb(32, 32, 32);
     --textClr: rgb(230, 230, 230);
-    --underlayClr: rgba(54, 54, 54, 0.781);
+    --underlayClr: rgba(54, 54, 54, 0.897);
 }
 
 /* ALL PAGES */
@@ -98,14 +98,6 @@ body {
 }
 
 /* HOME PAGE */
-/* .pfp {
-    margin-left: auto;
-    margin-right: auto;
-    border-radius: 50%;
-    margin-top: 100px;
-    height: 325px;
-    width: auto;
-} */
 .slideshow {
     position: relative;
     width: 750px;
@@ -127,7 +119,7 @@ body {
     position: absolute;
     z-index: 2;
     top: 40%;
-    background-color: var(--backgroundClr);
+    background-color: var(--underlayClr);
     font-size: 35px;
     padding: 0px 5px 0px 5px;
     border: 2px double var(--textClr);
